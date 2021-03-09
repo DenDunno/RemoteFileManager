@@ -1,0 +1,14 @@
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\bin\Debug\RemoteFileManager.exe.config
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\bin\Debug\RemoteFileManager.exe
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\bin\Debug\RemoteFileManager.pdb
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\MainWindow.g.cs
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\App.g.cs
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\RemoteFileManager_MarkupCompile.cache
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\RemoteFileManager_MarkupCompile.lref
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\MainWindow.baml
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\RemoteFileManager.g.resources
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\RemoteFileManager.Properties.Resources.resources
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\Server.csproj.GenerateResource.cache
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\RemoteFileManager.exe
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\RemoteFileManager.pdb
