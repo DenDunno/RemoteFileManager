@@ -12,3 +12,4 @@ D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\Server.cspro
 D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\Server.csproj.CoreCompileInputs.cache
 D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\RemoteFileManager.exe
 D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\RemoteFileManager.pdb
+D:\Business\MyProg\C#\RemoteFileManager\RemoteFileManager\obj\Debug\Server.csprojAssemblyReference.cache
