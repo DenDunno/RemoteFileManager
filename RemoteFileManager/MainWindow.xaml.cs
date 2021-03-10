@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Path = System.IO.Path;
 
 namespace Server
 {
@@ -21,28 +21,35 @@ namespace Server
     {
         
         private string _savePath = "C:\\";
-        private string _currentPath = "D:\\Business\\";
+        private string _currentPath = "";
 
 
         public MainWindow()
         {
             InitializeComponent();
-            ShowDirectoryСontent(_currentPath);
+            ShowDisks();
         }
 
 
         private void ShowDirectoryСontent(string path)
-        {
-            _textBlock.Text = path;
+        {            
             _listBox.Items.Clear();
             _listBox.Items.Add("..");
 
             DirectoryInfo directory = new DirectoryInfo(path);
             List<DirectoryInfo> allDirectories = directory.GetDirectories().ToList();
-            List<FileInfo> allFileInfoes = directory.GetFiles().ToList();
+            FileInfo[] allFileInfoes = directory.GetFiles();
 
             allDirectories.ForEach(dir => _listBox.Items.Add(dir));
-            allFileInfoes.ForEach(fileInfo => _listBox.Items.Add(fileInfo));
+
+            foreach (var file in allFileInfoes)
+            {
+                ListBoxItem item = new ListBoxItem();
+                item.FontWeight = FontWeights.Bold;
+                item.Content = file.ToString();
+
+                _listBox.Items.Add(item);
+            }
         }
 
 
@@ -60,25 +67,19 @@ namespace Server
 
         private void DirectoryWasChosen(object sender, RoutedEventArgs e)
         {
-            string newDirectoty = _listBox.SelectedItem.ToString() + "\\";
+            string newDirectory = _listBox.SelectedItem.ToString() + '\\';
 
-            if (newDirectoty == "..\\")
+            if (newDirectory == "..\\" && _currentPath.Length == 3) //  D:\\ , C:\\ , etc
             {
-                if (_currentPath == "D:\\")
-                    return;
-
-                _currentPath = _currentPath.Remove(_currentPath.Length - 1); // delete last '\'
-
-                while (_currentPath.Last() != (char)92)  // (char)92 = '\'
-                    _currentPath = _currentPath.Remove(_currentPath.Length - 1);
-
-                newDirectoty = "";
+                ShowDisks();
+                return;
             }
 
             try 
             {
-                ShowDirectoryСontent(_currentPath + newDirectoty);
-                _currentPath += newDirectoty;
+                ShowDirectoryСontent(_currentPath + newDirectory);
+                _currentPath = Path.GetFullPath(_currentPath + newDirectory);
+                _textBlock.Text = _currentPath;
             }
 
             catch
@@ -87,5 +88,20 @@ namespace Server
                 MessageBox.Show("Eror");
             }
         }
+
+
+        private void ShowDisks()
+        {
+            _textBlock.Text = "My computer";
+            _listBox.Items.Clear();
+            _currentPath = "";
+
+            string[] Drives = Environment.GetLogicalDrives();
+            foreach (string s in Drives)
+            {
+                _listBox.Items.Add(s);
+            }
+        }
     }
 }
+
